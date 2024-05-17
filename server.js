@@ -3,7 +3,8 @@ require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-
+const swaggerSetup = require('./swagger');
+swaggerSetup(app);
 const appRouter = require('./routes/route');
 app.use(bodyParser.json());
 app.use('/uploads', express.static('uploads'));
